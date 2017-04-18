@@ -29,8 +29,6 @@ public class ProjectModel {
 		
 		
 	}
-	
-	
 	@Override
 	public String toString() {
 		return "ProjectModel [projectId=" + projectId + ", projectTitle=" + projectTitle + ", technology_used="
