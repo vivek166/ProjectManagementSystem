@@ -1,18 +1,47 @@
 package com.synerzip.model;
+import javax.persistence.Entity;
+import javax.persistence.Id;
 
+
+@Entity
 public class ProjectModel {
 
-	String projectId;
+	
+	@Id
+	int projectId;
 	String projectTitle;
 	String technology_used;
 	String decsription;
 	String feature;
 
-	public String getProjectId() {
+	
+	public ProjectModel(int projectId, String projectTitle, String technology_used, String decsription,
+			String feature) {
+		super();
+		this.projectId = projectId;
+		this.projectTitle = projectTitle;
+		this.technology_used = technology_used;
+		this.decsription = decsription;
+		this.feature = feature;
+	}
+
+	public ProjectModel() {
+		
+		
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "ProjectModel [projectId=" + projectId + ", projectTitle=" + projectTitle + ", technology_used="
+				+ technology_used + ", decsription=" + decsription + ", feature=" + feature + "]";
+	}
+
+	public int getProjectId() {
 		return projectId;
 	}
 
-	public void setProjectId(String projectId) {
+	public void setProjectId(int projectId) {
 		this.projectId = projectId;
 	}
 
