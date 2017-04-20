@@ -17,7 +17,7 @@ import com.synerzip.model.Project;
 public class ProjectSystem {
 
 	@GET
-	@Produces(MediaType.APPLICATION_JSON)
+	@Produces(MediaType.TEXT_XML)
 	public List<Project> getAllProject() {
 		Session session = HibernateConnection.getSession();
 		org.hibernate.Transaction tx = session.beginTransaction();

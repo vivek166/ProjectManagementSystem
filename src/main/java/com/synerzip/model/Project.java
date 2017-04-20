@@ -21,6 +21,11 @@ public class Project {
 	@Column(name="project_feature")
 	private String projectFeature;
 	
+	
+	public Project() {
+
+	}
+
 	@Override
 	public String toString() {
 		return "Project [projectId=" + projectId + ", projectTitle=" + projectTitle + ", technologyUsed="
@@ -68,9 +73,4 @@ public class Project {
 		this.projectFeature = projectFeature;
 	}
 
-	public Project() {
-
-	}
-
-	
 }
