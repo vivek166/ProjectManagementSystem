@@ -10,7 +10,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import org.hibernate.Query;
 import org.hibernate.Session;
-import com.synerzip.hibernate.HibernateConnection;
+import com.synerzip.hibernate.HibernateUtils;
 import com.synerzip.model.Project;
 
 @Path("/project")
@@ -19,7 +19,7 @@ public class ProjectSystem {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Project> getAllProject() {
-		Session session = HibernateConnection.getSession();
+		Session session = HibernateUtils.getSession();
 		org.hibernate.Transaction tx = session.beginTransaction();
 
 		try {
@@ -38,7 +38,7 @@ public class ProjectSystem {
 	@Produces(MediaType.APPLICATION_JSON)
 	@Path("{projectId}")
 	public String getProject(@PathParam("projectId") long projectId) {
-		Session session = HibernateConnection.getSession();
+		Session session = HibernateUtils.getSession();
 		org.hibernate.Transaction tx = session.beginTransaction();
 
 		try {
@@ -57,7 +57,7 @@ public class ProjectSystem {
 	@Produces(MediaType.TEXT_PLAIN)
 	public String addProject(Project project) {
 
-		Session session = HibernateConnection.getSession();
+		Session session = HibernateUtils.getSession();
 
 		org.hibernate.Transaction tx = session.beginTransaction();
 
