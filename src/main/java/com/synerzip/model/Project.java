@@ -6,21 +6,25 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="project_information")
+@Table(name = "project_information")
 public class Project {
 
 	@Id
-	@Column(name="project_id")
+	@Column(name = "project_id")
 	private long projectId;
-	@Column(name="project_title")
+	@Column(name = "project_title")
 	private String projectTitle;
-	@Column(name="technology_used")
+	@Column(name = "technology_used")
 	private String technologyUsed;
-	@Column(name="project_description")
+	@Column(name = "project_description")
 	private String projectDescription;
-	@Column(name="project_feature")
+	@Column(name = "project_feature")
 	private String projectFeature;
-	
+
+	public Project() {
+
+	}
+
 	@Override
 	public String toString() {
 		return "Project [projectId=" + projectId + ", projectTitle=" + projectTitle + ", technologyUsed="
@@ -67,10 +71,4 @@ public class Project {
 	public void setProjectFeature(String projectFeature) {
 		this.projectFeature = projectFeature;
 	}
-
-	public Project() {
-
-	}
-
-	
 }
